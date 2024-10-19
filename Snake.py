@@ -62,7 +62,7 @@ def ran(snake_list):
 def thong_diep(msg, color):
     """Hiển thị thông điệp trên màn hình."""
     mesg = font_style.render(msg, True, color)
-    screen.blit(mesg, [WIDTH*0.45, HEIGHT / 5])
+    screen.blit(mesg, [WIDTH / 3.5, HEIGHT / 2.5])
 
 def nhan_dau_vao(x1_change, y1_change):
     """Xử lý đầu vào từ người chơi."""
@@ -178,10 +178,9 @@ def gameLoop():
     while not game_over:
 
         while game_close:
-            screen.fill(WHITE)
-            diem_cuoi_cuoc(score)
             screen.fill(BLACK)
-            thong_diep("GAME OVER", RED)
+            diem_cuoi_cuoc(score)
+            thong_diep("Nhấn C để Chơi Lại hoặc Q để Thoát", RED)
             pygame.draw.rect(screen,GREEN,(275,200,200,90))
             pygame.draw.rect(screen,GREEN,(550,200,200,90))
             pygame.draw.rect(screen,RED,(410,300,200,90))
